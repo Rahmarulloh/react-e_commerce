@@ -1,7 +1,5 @@
-import { useState, useEffect } from "react";
-import { IProduct } from "utils/types";
-import products from "utils/api";
 import ProductList from "components/product/productList";
+import "assets/styles/main.scss";
 
 function App() {
   return (

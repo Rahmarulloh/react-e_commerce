@@ -1,0 +1,90 @@
+@use "./verables" as *;
+
+%center {
+	display: grid;
+	place-items: center;
+}
+%row {
+	display: flex;
+	flex-direction: row;
+}
+%hover {
+	color: rgba(66, 187, 255, 1);
+	fill: rgba(66, 187, 255, 1);
+}
+
+@for $i from 1 through 100 {
+	$new-unit: $unit + (1 * $i);
+
+	%p-#{$new-unit} {
+		padding: #{$new-unit}px;
+	}
+
+	%pl-#{$new-unit} {
+		padding-left: #{$new-unit}px;
+	}
+	
+	%plr-#{$new-unit} {
+		padding-left: #{$new-unit}px;
+		padding-right: #{$new-unit}px;
+	}
+
+	%pr-#{$new-unit} {
+		padding-right: #{$new-unit}px;
+	}
+
+	%ptb-#{$new-unit} {
+		padding-top: #{$new-unit}px;
+		padding-bottom: #{$new-unit}px;
+	}
+
+	%pt-#{$new-unit} {
+		padding-top: #{$new-unit}px;
+	}
+
+	%pb-#{$new-unit} {
+		padding-bottom: #{$new-unit}px;
+	}
+
+	// Margin
+	%m-#{$new-unit} {
+		margin: #{$new-unit}px;
+	}
+
+	%mr-#{$new-unit} {
+		margin-right: #{$new-unit}px;
+	}
+
+	%ml-#{$new-unit} {
+		margin-left: #{$new-unit}px;
+	}
+
+	%mt-#{$new-unit} {
+		margin-top: #{$new-unit}px;
+	}
+
+	%mb-#{$new-unit} {
+		margin-bottom: #{$new-unit}px;
+	}
+
+	// Border radius
+  %br-#{$new-unit} {
+    border-radius: #{$new-unit}px;
+  }
+
+  %b-t-l-r-#{$new-unit} {
+    border-top-left-radius: #{$new-unit}px;
+  }
+
+  %b-t-r-r-#{$new-unit} {
+    border-top-right-radius: #{$new-unit}px;
+  }
+
+  %b-b-r-r-#{$new-unit} {
+    border-bottom-right-radius: #{$new-unit}px;
+  }
+
+  %b-b-l-r-#{$new-unit} {
+    border-bottom-left-radius: #{$new-unit}px;
+  }
+}
