@@ -1,13 +1,13 @@
 import { GridIcon, ListIcon } from "assets/icons";
-import Cart from "components/cart";
+import Cart from "components/product/productCard";
 import React, { useEffect, useState } from "react";
 import products from "utils/api";
 import { IProduct } from "utils/types";
 
 export default function ProductList() {
   const [productsArr, setProductsArr] = useState<IProduct[]>([]);
-  const [isGrid, setGrid] = useState(false);
-  const [isList, setList] = useState(true);
+  const [isGrid, setGrid] = useState(true);
+  const [isList, setList] = useState(false);
 
   useEffect(() => {
     async function fetchProducts() {
@@ -28,34 +28,34 @@ export default function ProductList() {
   }
 
   return (
-    <div className="products">
-      <div className="products_header">
-        <div className="products_buttons">
+    <div className="products-List">
+      <div className="products-List_header">
+        <div className="products-List_buttons">
           <button
-            className={!isGrid ? "products_btn" : "products_btn active"}
+            className={!isGrid ? "products-List_btn" : "products-List_btn active"}
             onClick={handleGrid}
           >
             <GridIcon />
           </button>
           <button
-            className={!isList ? "products_btn" : "products_btn active"}
+            className={!isList ? "products-List_btn" : "products-List_btn active"}
             onClick={handleList}
           >
             <ListIcon />
           </button>
         </div>
 
-        <span className="products_amount">
+        <p className="products-List_amount">
           {productsArr.length} Products Found
-        </span>
+        </p>
 
-        <div className="products_line"></div>
+        <div className="products-List_line"></div>
 
-        <div className="products_sort">
-          <label htmlFor="sort" className="products_sort-title">
+        <div className="products-List_sort">
+          <label htmlFor="sort" className="products-List_sort-title">
             Sort By
           </label>
-          <select name="sort" id="sort-group" className="products_sort-group">
+          <select name="sort" id="sort-group" className="products-List_sort-group">
             <option value="lowest">Price(Lowest)</option>
             <option value="highest">Price(Highest)</option>
             <option value="a-z">Name(A-Z)</option>
@@ -64,7 +64,7 @@ export default function ProductList() {
         </div>
       </div>
 
-      <div className={isGrid ? "products_grid" : "products_list"}>
+      <div className={isGrid ? "products-List_grid" : "products-List_list"}>
         {productsArr.map(({ image, name, price, description }) => (
           <Cart
             imgUrl={image}

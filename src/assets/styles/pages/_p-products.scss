@@ -1,0 +1,6 @@
+.products {
+  width: 1170px;
+  margin: 4rem auto;
+//   position: relative;
+  @include d-flex($gp: 3rem);
+}

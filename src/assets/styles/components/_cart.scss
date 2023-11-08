@@ -1,8 +1,7 @@
 .cart {
-  display: grid;
+  width: 280px;
   height: 250px;
-  min-width: 350px;
-  //   border: 1px solid red;
+  display: grid;
 
   &_img {
     z-index: 2;

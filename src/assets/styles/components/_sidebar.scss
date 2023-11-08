@@ -1,71 +1,75 @@
-.filter-div{
- width: 250px;
- height: 650px;  
-//  background-color: red; 
-border: 1px solid black;
- display: grid;
- justify-content: center;
- padding: 10px;
- margin: 10px;
- .search-input{
+.filter-div {
+  top: 1rem;
+  width: 250px;
+  height: 650px;
+  display: grid;
+  position: sticky;
+  justify-content: center;
+
+  .search-input {
     width: 200px;
     height: 40px;
-    border-radius: 5px;
     border: white;
+    border-radius: 5px;
+    margin-bottom: 1.25rem;
     background-color: #f1f5f8;
- }
- p{
+  }
+  p {
     padding: 5px;
- }
- .fltr-pla:hover{
-    width: 150px;
+  }
+  .fltr-pla:hover {
+    cursor: pointer;
+    width: max-content;
     border-bottom: 1px solid black;
- }
- .all-input{
+  }
+  .all-input {
     width: 100px;
     height: 30px;
- }
- .free{
+  }
+  .free {
     display: flex;
     align-items: center;
- }
- button{
+  }
+  button {
     width: 130px;
     height: 30px;
     background-color: rgb(224, 61, 61);
     border: white;
     color: white;
     border-radius: 5px;
-}
-.colors{
+  }
+  .colors {
     display: flex;
     gap: 5px;
-    .mini-color1{
-        width: 20px;
-        height: 20px;
-        border-radius: 50%;
-        background-color: red;
+    .mini-color1 {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background-color: red;
     }
-    .mini-color2{
-        width: 20px;
-        height: 20px;
-        border-radius: 50%;
-        background-color: blue;
-    }.mini-color3{
-        width: 20px;
-        height: 20px;
-        border-radius: 50%;
-        background-color: black;
-    }.mini-color4{
-        width: 20px;
-        height: 20px;
-        border-radius: 50%;
-        background-color: pink;
-    }.mini-color5{
-        width: 20px;
-        height: 20px;
-        border-radius: 50%;
-        background-color: brown;
+    .mini-color2 {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background-color: blue;
     }
-}
+    .mini-color3 {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background-color: black;
+    }
+    .mini-color4 {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background-color: pink;
+    }
+    .mini-color5 {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background-color: brown;
+    }
+  }
 }

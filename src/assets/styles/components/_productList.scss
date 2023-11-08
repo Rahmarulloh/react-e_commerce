@@ -1,4 +1,4 @@
-.products {
+.products-List {
   &_header {
     width: 100%;
     display: grid;
@@ -32,7 +32,7 @@
   }
 
   &_line {
-    width: 70%;
+    // width: 70%;
     height: 1px;
     background: var(--clr-grey-8);
   }
