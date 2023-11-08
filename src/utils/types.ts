@@ -1,4 +1,6 @@
-interface IProductList {}
+interface IProductList {
+    isGrid: boolean;
+}
 
 interface IProduct {
   id: string;

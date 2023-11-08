@@ -1,0 +1,13 @@
+.header__support {
+    @extend %p-21;
+	@include d-flex($ai: center, $jc: space-between);
+}
+
+.header__help {
+	@include d-flex($ai: center, $gp: 36px);
+}
+
+.header__quick {
+    cursor: pointer;
+    @include d-flex($ai: center, $gp: 20px);
+}

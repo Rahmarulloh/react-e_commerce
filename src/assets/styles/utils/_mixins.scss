@@ -1,0 +1,26 @@
+@mixin font($fw: 500, $fs: 14px, $lh: 17px, $fstyle: normal) {
+  font-family: "cera_compact";
+  font-style: $fstyle;
+  font-weight: $fw;
+  font-size: $fs;
+  line-height: $lh;
+}
+@mixin d-flex($fd: row, $jc: unset, $ai: unset, $gp: 0) {
+  display: flex;
+  flex-direction: $fd;
+  justify-content: $jc;
+  align-items: $ai;
+  gap: $gp;
+}
+@mixin d-grid($ji: unset, $ai: unset, $pi: unset, $gp: 0) {
+  display: grid;
+  justify-items: $ji;
+  align-items: $ai;
+  place-items: $pi;
+  gap: $gp;
+}
+
+@mixin center {
+  display: grid;
+  place-items: center;
+}

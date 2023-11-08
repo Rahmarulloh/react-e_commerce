@@ -1,0 +1,60 @@
+.products {
+  &_header {
+    width: 100%;
+    display: grid;
+    margin: 0 0 2rem;
+    column-gap: 2rem;
+    align-items: center;
+    grid-template-columns: auto auto 1fr auto;
+  }
+
+  &_buttons {
+    gap: 0.5rem;
+    display: flex;
+  }
+
+  &_btn {
+    width: 1.5rem;
+    display: flex;
+    height: 1.5rem;
+    cursor: pointer;
+    align-items: center;
+    border-radius: 0.25rem;
+    justify-content: center;
+    background: transparent;
+    color: var(--clr-black);
+    border: 1px solid var(--clr-black);
+
+    &.active {
+      color: var(--clr-white);
+      background: var(--clr-black);
+    }
+  }
+
+  &_line {
+    width: 70%;
+    height: 1px;
+    background: var(--clr-grey-8);
+  }
+
+  &_sort {
+    &-title {
+      font-size: 1rem;
+      text-transform: capitalize;
+    }
+
+    &-group {
+      font-size: 1rem;
+      padding: 0.25rem 0.5rem;
+      border-color: transparent;
+      text-transform: capitalize;
+    }
+  }
+
+  &_list {
+    gap: 2rem;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+  }
+}

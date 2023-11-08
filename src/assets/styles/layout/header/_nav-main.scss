@@ -1,0 +1,26 @@
+.header__nav-main {
+	@extend %ptb-20, %plr-68;
+	background: var(--dark-cerulean);
+	@include d-flex($ai: center, $jc: space-between);
+}
+
+.header__left {
+	@include d-flex($ai: center, $gp: 85px);
+}
+
+.header__right {
+	@include d-flex($ai: center, $gp: 30px);
+}
+
+.header__box {
+	@include d-flex($ai: center, $gp: 12px);
+}
+
+.header__icon {
+    @include d-flex($ai: center, $gp: 3px);
+
+    span {
+        background: var(--goldenrod);
+    }
+
+}
