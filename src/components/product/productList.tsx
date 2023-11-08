@@ -7,6 +7,7 @@ import { IProduct } from "utils/types";
 export default function ProductList() {
   const [productsArr, setProductsArr] = useState<IProduct[]>([]);
   const [isGrid, setGrid] = useState(false);
+  const [isList, setList] = useState(true);
 
   useEffect(() => {
     async function fetchProducts() {
@@ -16,14 +17,30 @@ export default function ProductList() {
     fetchProducts();
   }, []);
 
+  function handleGrid() {
+    setGrid(true);
+    setList(false);
+  }
+
+  function handleList() {
+    setGrid(false);
+    setList(true);
+  }
+
   return (
     <div className="products">
       <div className="products_header">
         <div className="products_buttons">
-          <button className={!isGrid ? "products_btn" : "products_btn active"}>
+          <button
+            className={!isGrid ? "products_btn" : "products_btn active"}
+            onClick={handleGrid}
+          >
             <GridIcon />
           </button>
-          <button className={!isGrid ? "products_btn" : "products_btn active"}>
+          <button
+            className={!isList ? "products_btn" : "products_btn active"}
+            onClick={handleList}
+          >
             <ListIcon />
           </button>
         </div>
@@ -47,9 +64,15 @@ export default function ProductList() {
         </div>
       </div>
 
-      <div className="products_list">
-        {productsArr.map(({ image, name, price }) => (
-          <Cart imgUrl={image} title={name} price={price} />
+      <div className={isGrid ? "products_grid" : "products_list"}>
+        {productsArr.map(({ image, name, price, description }) => (
+          <Cart
+            imgUrl={image}
+            title={name}
+            price={price}
+            isGrid={isGrid}
+            description={description}
+          />
         ))}
       </div>
     </div>

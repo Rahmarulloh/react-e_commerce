@@ -24,3 +24,8 @@
   display: grid;
   place-items: center;
 }
+
+@mixin start {
+  display: grid;
+  place-items: start;
+}
