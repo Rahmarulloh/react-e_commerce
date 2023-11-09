@@ -1,4 +1,4 @@
-.products {
+.products-List {
   &_header {
     width: 100%;
     display: grid;
@@ -32,7 +32,7 @@
   }
 
   &_line {
-    width: 70%;
+    // width: 70%;
     height: 1px;
     background: var(--clr-grey-8);
   }
@@ -51,10 +51,16 @@
     }
   }
 
-  &_list {
+  &_grid {
     gap: 2rem;
     width: 100%;
     display: flex;
     flex-wrap: wrap;
+  }
+
+  &_list {
+    display: grid;
+    row-gap: 3rem;
+    place-items: center;
   }
 }

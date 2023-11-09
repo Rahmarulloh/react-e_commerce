@@ -1,5 +1,5 @@
 interface IProductList {
-    isGrid: boolean;
+  isGrid: boolean;
 }
 
 interface IProduct {
@@ -15,9 +15,11 @@ interface IProduct {
 }
 
 interface CartProp {
-  imgUrl: string;
   title: string;
   price: number;
+  imgUrl: string;
+  isGrid: boolean;
+  description?: string;
 }
 
 export type { IProduct, CartProp };

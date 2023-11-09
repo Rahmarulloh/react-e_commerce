@@ -1,0 +1,17 @@
+.footer {
+  height: 5rem;
+  text-align: center;
+  color: var(--clr-white);
+  background: var(--clr-black);
+  @include d-flex($ai: center, $jc: center);
+
+  &_title {
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.25;
+
+    span {
+      color: var(--clr-primary-5);
+    }
+  }
+}
