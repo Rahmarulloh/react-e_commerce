@@ -25,6 +25,13 @@ export default function Cart({
     fullPrice = firstNumber + "," + suffixPrice + "." + prefixPrice;
   }
 
+  if (stringPrice.length < 5) {
+    suffixPrice = stringPrice.slice(0, 2);
+    prefixPrice = stringPrice.slice(2);
+    fullPrice = suffixPrice + "." + prefixPrice;
+    console.log("fullPrice: ", fullPrice);
+  }
+
   return (
     <>
       {isGrid ? (
