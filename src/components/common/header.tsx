@@ -13,9 +13,15 @@ export default function Header() {
         </div>
 
         <ul>
-          <NavLink to="/">Home</NavLink>
-          <NavLink to="/about">About</NavLink>
-          <NavLink to="/products">Products</NavLink>
+          <NavLink className="link" to="/">
+            Home
+          </NavLink>
+          <NavLink className="link" to="/about">
+            About
+          </NavLink>
+          <NavLink className="link" to="/products">
+            Products
+          </NavLink>
         </ul>
 
         <div className="nav_btns">

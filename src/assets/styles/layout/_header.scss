@@ -1,0 +1,82 @@
+.header {
+  @include d-flex($ai: center, $jc: center);
+
+  & > nav {
+    width: 90vw;
+    height: 5rem;
+    margin: 0 auto;
+    max-width: 1170px;
+    @include d-grid($ai: center, $pi: center);
+    grid-template-columns: auto 1fr auto;
+  }
+
+  & > ul {
+    @include d-flex($jc: center);
+  }
+
+  .link {
+    font-size: 1rem;
+    padding: 0.5rem;
+    margin: 0 0.5rem;
+    text-decoration: none;
+    display: inline-block;
+    color: var(--clr-grey-3);
+    text-transform: capitalize;
+
+    &:hover {
+      border-bottom: 2px solid var(--clr-primary-7);
+    }
+  }
+
+  .nav_btns {
+    width: 255px;
+    @include d-grid($ai: center);
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .nav_cart {
+    a {
+      display: flex;
+      font-size: 1.5rem;
+      align-items: center;
+      text-decoration: none;
+      color: var(--clr-grey-1);
+    }
+
+    .cart-container {
+      display: flex;
+      position: relative;
+      align-items: center;
+
+      svg {
+        height: 1.6rem;
+        margin-left: 5px;
+      }
+
+      .cart-value {
+        top: -10px;
+        width: 16px;
+        right: -16px;
+        height: 16px;
+        padding: 12px;
+        display: flex;
+        border-radius: 20px;
+        font-size: 0.75rem;
+        position: absolute;
+        align-items: center;
+        justify-content: center;
+        color: var(--clr-white);
+        background: var(--clr-primary-5);
+      }
+    }
+  }
+
+  .nav_auth_btn {
+    cursor: pointer;
+    font-size: 1.5rem;
+    @include d-flex($ai: center, $jc: center, $gp: 10px);
+    background: transparent;
+    color: var(--clr-grey-1);
+    border-color: transparent;
+  }
+}

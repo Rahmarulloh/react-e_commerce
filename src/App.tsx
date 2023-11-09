@@ -8,10 +8,12 @@ import {
 
 // Layout
 import Layout from "components/common/layout";
+
+// Pages
+import Home from "pages/home";
+import About from "pages/about";
 import Products from "pages/products";
 import Cart from "components/cart/cart";
-import About from "pages/about";
-import Home from "pages/home";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
