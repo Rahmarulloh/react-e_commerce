@@ -1,0 +1,41 @@
+.about1{
+.about{
+    width: 100%;
+    height: 20vh;
+    background-color: #eaded7;
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    h2{
+        font-size: 30px;
+
+    }
+
+}
+.section11{
+    width: 100%;
+    height: 90vh;
+    // background-color: red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    img{
+        width: 500px;
+        height: 500px;
+        border-radius: 10px;
+    }
+    .tekst{
+        width: 500px;
+        display: grid;
+        h3{
+            font-size: 40px;
+            padding: 20px;
+            border-bottom: 3px solid #ab7a5f;
+        }
+        p{
+            font-size: 16px;
+        }
+    }
+}
+}
