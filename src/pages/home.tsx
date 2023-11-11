@@ -4,19 +4,24 @@ import img2 from "../assets/images/img2.jpeg"
 import product from "../assets/images/product1.jpeg";
 import product2 from "../assets/images/product2.jpeg";
 import product3 from "../assets/images/product3.jpeg";
+import { useNavigate } from "react-router-dom";
 export default function Home() {
+  const navigete = useNavigate()
   return (
     <div className="home">
       <div className="section1">
         <div className="text1">
           <h1>Design Your Comfort Zone </h1>
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti iure quasi odit tenetur unde officiis repudiandae quod deserunt quia eum?</p>
-          <button>Shop Now</button>
+          <button onClick={()=>{
+            navigete("/products")
+          }}>Shop Now</button>
         </div>
         <div className="images">
+          <div className="div1"></div>
           <img className="img1" src={img1} alt="" />
           <img className="img2" src={img2} alt="" />
-        </div>
+          </div>
       </div>
       <div className="section2">
         <h2>Featured Products</h2>
@@ -48,6 +53,12 @@ export default function Home() {
               </div>
             </div>
           </div>
+          
+        </div>
+        <div className="btnnn">
+        <button className="btn22" onClick={()=>{
+            navigete("/products")
+          }}>All Products</button>
         </div>
       </div>
 
@@ -78,6 +89,7 @@ export default function Home() {
             <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptates, ea. Perferendis corrupti reiciendis nesciunt rerum velit autem unde numquam nisi</p>
           </div>
         </div>
+        
       </div>
      
      <div className="section4">
