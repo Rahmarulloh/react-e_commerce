@@ -1,16 +1,18 @@
-export default function Sidebar() {
+import { IFilter } from "utils/types";
+import Option from "./option";
+
+export default function Sidebar(props: IFilter) {
   return (
     <div className="filter-div">
       <input className="search-input" type="text" placeholder="Search" />
       <div className="category">
         <h3>Category</h3>
-        <p className="fltr-pla">All</p>
-        <p className="fltr-pla">Office</p>
-        <p className="fltr-pla">Living Room</p>
-        <p className="fltr-pla">Kitchen</p>
-        <p className="fltr-pla">Bedroom</p>
-        <p className="fltr-pla">Dining</p>
-        <p className="fltr-pla">Kids</p>
+        <button name="all" className="fltr-pla" onClick={props.handleCategory}>
+          All
+        </button>
+        {props.categoryList.map((category) => (
+          <Option value={category} handleCategory={props.handleCategory} />
+        ))}
       </div>
       <div className="comp">
         <h3>Company</h3>
@@ -34,7 +36,7 @@ export default function Sidebar() {
         <p>Free Shleping</p>
         <input type="checkbox" />
       </div>
-      <button>Clear Filters</button>
+      <button className="clear">Clear Filters</button>
     </div>
   );
 }

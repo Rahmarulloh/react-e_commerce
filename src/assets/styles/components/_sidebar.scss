@@ -14,8 +14,12 @@
     margin-bottom: 1.25rem;
     background-color: #f1f5f8;
   }
-  p {
+  .fltr-pla {
     padding: 5px;
+    border: none;
+    display: block;
+    background: none;
+    text-transform: capitalize;
   }
   .fltr-pla:hover {
     cursor: pointer;
@@ -30,7 +34,7 @@
     display: flex;
     align-items: center;
   }
-  button {
+  .clear {
     width: 130px;
     height: 30px;
     background-color: rgb(224, 61, 61);

@@ -1,5 +1,26 @@
+interface IFilter {
+  // price: number;
+  // colorList: string[];
+  // companyList: string[];
+  categoryList: string[];
+  // handleColor: () => void;
+  // handleCompany: () => void;
+  handleCategory: (
+    event: React.MouseEvent<HTMLButtonElement, MouseEvent>
+  ) => void;
+  // handlePrice: (event: React.ChangeEvent<HTMLInputElement>) => void;
+}
+
+interface IOption {
+  value: string;
+  handleCategory: (
+    event: React.MouseEvent<HTMLButtonElement, MouseEvent>
+  ) => void;
+}
+
 interface IProductList {
-  isGrid: boolean;
+  productList: IProduct[];
+  handleSort: (event: React.ChangeEvent<HTMLSelectElement>) => void;
 }
 
 interface IProduct {
@@ -22,4 +43,4 @@ interface CartProp {
   description?: string;
 }
 
-export type { IProduct, CartProp };
+export type { IProduct, CartProp, IProductList, IFilter, IOption };
