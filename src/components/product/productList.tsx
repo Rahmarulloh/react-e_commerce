@@ -60,17 +60,21 @@ export default function ProductList(props: IProductList) {
         </div>
       </div>
 
-      <div className={isGrid ? "products-List_grid" : "products-List_list"}>
-        {props.productList.map(({ image, name, price, description }) => (
-          <Cart
-            imgUrl={image}
-            title={name}
-            price={price}
-            isGrid={isGrid}
-            description={description}
-          />
-        ))}
-      </div>
+      {props.productList.length === 0 ? (
+        <h2>Sorry, no products matched your search...</h2>
+      ) : (
+        <div className={isGrid ? "products-List_grid" : "products-List_list"}>
+          {props.productList.map(({ image, name, price, description }) => (
+            <Cart
+              imgUrl={image}
+              title={name}
+              price={price}
+              isGrid={isGrid}
+              description={description}
+            />
+          ))}
+        </div>
+      )}
     </div>
   );
 }

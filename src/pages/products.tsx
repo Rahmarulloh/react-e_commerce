@@ -8,6 +8,9 @@ export default function Products() {
   const [originalProducts, setOriginalProducts] = useState<IProduct[]>([]);
   const [productsArr, setProductsArr] = useState<IProduct[]>([]);
   const [categoryList, setCategoryList] = useState<string[]>([]);
+  const [companyList, setCompanyList] = useState<string[]>([]);
+  const [isCategoryFiltered, setIsCategoryFiltered] = useState<boolean>(false);
+  const [isCompanyFiltered, setIsCompanyFiltered] = useState<boolean>(false);
 
   useEffect(() => {
     async function fetchProducts() {
@@ -17,6 +20,9 @@ export default function Products() {
       setCategoryList(
         Array.from(new Set(data.map((product) => product.category)))
       );
+      setCompanyList(
+        Array.from(new Set(data.map((product) => product.company)))
+      );
     }
     fetchProducts();
   }, []);
@@ -24,10 +30,22 @@ export default function Products() {
   function handleCategory(
     event: React.MouseEvent<HTMLButtonElement, MouseEvent>
   ) {
-    const name = (event.target as HTMLButtonElement).name;
+    setIsCategoryFiltered(true);
+    const buttons = document.querySelectorAll(".fltr-pla");
+    buttons.forEach((button) => {
+      button.classList.remove("active");
+    });
+
+    const button = event.target as HTMLButtonElement;
+    const name = button.name;
+    button.classList.toggle("active");
     console.log("Products Arr: ", productsArr);
 
-    if (name === "all") {
+    if (isCompanyFiltered) {
+      setProductsArr(
+        originalProducts.filter((product) => product.category === name)
+      );
+    } else if (name === "all") {
       setProductsArr(originalProducts.sort((a, b) => a.price - b.price));
     } else {
       setProductsArr(
@@ -36,6 +54,20 @@ export default function Products() {
     }
 
     console.log("name: ", name);
+  }
+
+  function handleCompany(event: React.ChangeEvent<HTMLSelectElement>) {
+    setIsCompanyFiltered(true);
+    const name = event.target.value;
+    console.log("Products Arr: ", productsArr);
+
+    if (isCategoryFiltered) {
+      setProductsArr(productsArr.filter((product) => product.company === name));
+    } else if (name === "all") {
+      setProductsArr(originalProducts.sort((a, b) => a.price - b.price));
+    } else {
+      setProductsArr(productsArr.filter((product) => product.company === name));
+    }
   }
 
   function handleSort(event: React.ChangeEvent<HTMLSelectElement>) {
@@ -58,7 +90,12 @@ export default function Products() {
 
   return (
     <div className="products">
-      <Sidebar categoryList={categoryList} handleCategory={handleCategory} />
+      <Sidebar
+        categoryList={categoryList}
+        companyList={companyList}
+        handleCategory={handleCategory}
+        handleCompany={handleCompany}
+      />
       <ProductList productList={productsArr} handleSort={handleSort} />
     </div>
   );

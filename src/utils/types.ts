@@ -1,10 +1,10 @@
 interface IFilter {
   // price: number;
   // colorList: string[];
-  // companyList: string[];
+  companyList: string[];
   categoryList: string[];
   // handleColor: () => void;
-  // handleCompany: () => void;
+  handleCompany: (event: React.ChangeEvent<HTMLSelectElement>) => void;
   handleCategory: (
     event: React.MouseEvent<HTMLButtonElement, MouseEvent>
   ) => void;

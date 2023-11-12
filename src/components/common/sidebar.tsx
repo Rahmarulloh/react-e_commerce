@@ -7,7 +7,7 @@ export default function Sidebar(props: IFilter) {
       <input className="search-input" type="text" placeholder="Search" />
       <div className="category">
         <h3>Category</h3>
-        <button name="all" className="fltr-pla" onClick={props.handleCategory}>
+        <button name="all" className="fltr-pla active" onClick={props.handleCategory}>
           All
         </button>
         {props.categoryList.map((category) => (
@@ -16,7 +16,19 @@ export default function Sidebar(props: IFilter) {
       </div>
       <div className="comp">
         <h3>Company</h3>
-        <input className="all-input" type="text" placeholder="All" />
+        <div className="products-List_sort">
+          <select
+            name="sort"
+            id="sort-group"
+            className="products-List_sort-group"
+            onChange={props.handleCompany}
+          >
+            <option value="all">All</option>
+            {props.companyList.map((company) => (
+              <option value={company}>{company}</option>
+            ))}
+          </select>
+        </div>
       </div>
       <div className="colors">
         <h3>Color</h3>
