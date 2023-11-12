@@ -7,7 +7,9 @@ export default function Sidebar(props: IFilter) {
       <input className="search-input" type="text" placeholder="Search" />
       <div className="category">
         <h3>Category</h3>
-        <button name="all" className="fltr-pla" onClick={props.handleCategory}>
+        <button name="all" className="fltr-pla" onClick={()=>{
+          props.handleCategory("all")
+        }}>
           All
         </button>
         {props.categoryList.map((category) => (

@@ -6,7 +6,7 @@ interface IFilter {
   // handleColor: () => void;
   // handleCompany: () => void;
   handleCategory: (
-    event: React.MouseEvent<HTMLButtonElement, MouseEvent>
+   name:string
   ) => void;
   // handlePrice: (event: React.ChangeEvent<HTMLInputElement>) => void;
 }
@@ -14,7 +14,7 @@ interface IFilter {
 interface IOption {
   value: string;
   handleCategory: (
-    event: React.MouseEvent<HTMLButtonElement, MouseEvent>
+    name: string
   ) => void;
 }
 

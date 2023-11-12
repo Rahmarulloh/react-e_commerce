@@ -5,7 +5,9 @@ export default function Option(props: IOption) {
     <button
       name={props.value}
       className="fltr-pla"
-      onClick={props.handleCategory}
+      onClick={()=>{
+        props.handleCategory(props.value)
+      }}
     >
       {props.value}
     </button>

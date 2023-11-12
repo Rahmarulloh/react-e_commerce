@@ -22,10 +22,11 @@ export default function Products() {
   }, []);
 
   function handleCategory(
-    event: React.MouseEvent<HTMLButtonElement, MouseEvent>
+    name :string,
   ) {
-    const name = (event.target as HTMLButtonElement).name;
     console.log("Products Arr: ", productsArr);
+    console.log(name);
+    
 
     if (name === "all") {
       setProductsArr(originalProducts.sort((a, b) => a.price - b.price));
