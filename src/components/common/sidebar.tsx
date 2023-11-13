@@ -1,17 +1,58 @@
 import { IFilter } from "utils/types";
 import Option from "./option";
 
-export default function Sidebar(props: IFilter) {
+export default function Sidebar({
+  price,
+  colorList,
+  companyList,
+  handleColor,
+  handlePrice,
+  handleClear,
+  handleSearch,
+  categoryList,
+  handleCompany,
+  handleCategory,
+  handleShipping,
+}: IFilter) {
+  const stringPrice = `${price}`;
+  let firstNumber = "";
+  let suffixPrice = "";
+  let prefixPrice = "";
+  let fullPrice = "";
+
+  if (stringPrice.length < 6) {
+    suffixPrice = stringPrice.slice(0, 3);
+    prefixPrice = stringPrice.slice(3);
+    fullPrice = suffixPrice + "." + prefixPrice;
+  } else {
+    firstNumber = stringPrice.slice(0, 1);
+    suffixPrice = stringPrice.slice(1, 4);
+    prefixPrice = stringPrice.slice(4);
+    fullPrice = firstNumber + "," + suffixPrice + "." + prefixPrice;
+  }
+
+  if (stringPrice.length < 5) {
+    suffixPrice = stringPrice.slice(0, 2);
+    prefixPrice = stringPrice.slice(2);
+    fullPrice = suffixPrice + "." + prefixPrice;
+    console.log("fullPrice: ", fullPrice);
+  }
+
   return (
     <div className="filter-div">
-      <input className="search-input" type="text" placeholder="Search" />
+      <input
+        className="search-input"
+        type="text"
+        placeholder="Search"
+        onChange={handleSearch}
+      />
       <div className="category">
         <h3>Category</h3>
-        <button name="all" className="fltr-pla active" onClick={props.handleCategory}>
+        <button name="all" className="fltr-pla active" onClick={handleCategory}>
           All
         </button>
-        {props.categoryList.map((category) => (
-          <Option value={category} handleCategory={props.handleCategory} />
+        {categoryList.map((category) => (
+          <Option value={category} handleCategory={handleCategory} />
         ))}
       </div>
       <div className="comp">
@@ -21,10 +62,10 @@ export default function Sidebar(props: IFilter) {
             name="sort"
             id="sort-group"
             className="products-List_sort-group"
-            onChange={props.handleCompany}
+            onChange={handleCompany}
           >
             <option value="all">All</option>
-            {props.companyList.map((company) => (
+            {companyList.map((company) => (
               <option value={company}>{company}</option>
             ))}
           </select>
@@ -32,23 +73,41 @@ export default function Sidebar(props: IFilter) {
       </div>
       <div className="colors">
         <h3>Color</h3>
-        <p>All</p>
-        <div className="mini-color1"></div>
-        <div className="mini-color2"></div>
-        <div className="mini-color3"></div>
-        <div className="mini-color4"></div>
-        <div className="mini-color5"></div>
+        <button
+          name="all"
+          className="mini-color-btn"
+          onClick={() => handleColor("all")}
+        >
+          All
+        </button>
+        <div className="mini-colors">
+          {colorList.map((color) => (
+            <button
+              className="mini-color"
+              style={{ backgroundColor: color }}
+              onClick={() => handleColor(color)}
+            ></button>
+          ))}
+        </div>
       </div>
       <div className="price">
         <h3>Price</h3>
-        <p>$3.009.000</p>
-        <input type="range" />
+        <p>${fullPrice}</p>
+        <input
+          type="range"
+          min={0}
+          max={String(price)}
+          value={String(price)}
+          onChange={handlePrice}
+        />
       </div>
       <div className="free">
-        <p>Free Shleping</p>
-        <input type="checkbox" />
+        <p>Free Shipping</p>
+        <input type="checkbox" onChange={handleShipping} />
       </div>
-      <button className="clear">Clear Filters</button>
+      <button className="clear" onClick={handleClear}>
+        Clear Filters
+      </button>
     </div>
   );
 }

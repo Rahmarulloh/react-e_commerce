@@ -1,14 +1,17 @@
 interface IFilter {
-  // price: number;
-  // colorList: string[];
+  price: number;
+  colorList: string[];
   companyList: string[];
   categoryList: string[];
-  // handleColor: () => void;
+  handleSearch: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  handleColor: (color: string) => void;
   handleCompany: (event: React.ChangeEvent<HTMLSelectElement>) => void;
   handleCategory: (
     event: React.MouseEvent<HTMLButtonElement, MouseEvent>
   ) => void;
-  // handlePrice: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  handlePrice: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  handleShipping: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  handleClear: () => void;
 }
 
 interface IOption {

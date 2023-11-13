@@ -9,6 +9,7 @@
   .search-input {
     width: 200px;
     height: 40px;
+    padding: 5px;
     border: white;
     border-radius: 5px;
     margin-bottom: 1.25rem;
@@ -46,37 +47,31 @@
     border-radius: 5px;
   }
   .colors {
-    display: flex;
     gap: 5px;
-    .mini-color1 {
+    display: flex;
+    flex-direction: column;
+
+    .mini-color-btn {
       width: 20px;
       height: 20px;
-      border-radius: 50%;
-      background-color: red;
+      border: none;
+      opacity: 0.5;
+      cursor: pointer;
+      background: none;
     }
-    .mini-color2 {
-      width: 20px;
-      height: 20px;
-      border-radius: 50%;
-      background-color: blue;
-    }
-    .mini-color3 {
-      width: 20px;
-      height: 20px;
-      border-radius: 50%;
-      background-color: black;
-    }
-    .mini-color4 {
-      width: 20px;
-      height: 20px;
-      border-radius: 50%;
-      background-color: pink;
-    }
-    .mini-color5 {
-      width: 20px;
-      height: 20px;
-      border-radius: 50%;
-      background-color: brown;
+
+    .mini-colors {
+      gap: 5px;
+      display: flex;
+
+      .mini-color {
+        width: 20px;
+        height: 20px;
+        border: none;
+        opacity: 0.5;
+        cursor: pointer;
+        border-radius: 50%;
+      }
     }
   }
 }
